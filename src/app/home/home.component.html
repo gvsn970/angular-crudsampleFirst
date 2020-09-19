@@ -1,0 +1,27 @@
+<div class="container">
+    <h2>Emp Detailes</h2>
+    <p></p>
+    
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>name</th>
+          <th>Country</th>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let emp of temp">
+          <td>{{emp.empName}}</td>
+          <td>{{emp.empCountry}}</td>
+          <td (click) = "deleteEmp(emp.empId)"><a > Delete</a></td>
+         <td (click) = "getEmpDatabyId(emp.empId)"><a>UPDATE</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <a routerLink='/employee'>Add Emp</a><br><br><br>
+  <a routerLink='/file'>File </a>
+
+  <h3 *ngIf="isdelete">{{confirmationString}}</h3>
